@@ -1,6 +1,10 @@
+import 'reflect-metadata';
+import { Container } from "./Container";
+
 export function Controller() {
   return function (target) {
-    // console.log('hi from controller decorator...');
-    // console.log(target);
+
+    const controller = Container.getService<typeof target>(target);
+    Reflect.defineMetadata('controller', controller, target);
   }
 }

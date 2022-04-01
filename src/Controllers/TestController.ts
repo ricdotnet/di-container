@@ -5,7 +5,7 @@ import { Controller } from "../../Decorators/Controller";
 @Controller()
 export class TestController {
 
-  constructor(public userService: UserService) {}
+  constructor(public userService?: UserService) {}
 
   print() {
     this.userService.printUsername();
